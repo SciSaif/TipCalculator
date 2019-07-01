@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/a9a37f8c02.js"></script>
+    <link rel="stylesheet" href="slider.css">
     <title>Tip Calculator</title>
 </head>
 <body>
@@ -14,14 +15,17 @@
             <p>How much was your bill?</p>
             $ <input type="text" placeholder="Bill Amount" class="bill">
             <p>How was your service?</p>
-            <input type="range" class="satisfaction">
-            <div class="faces">
-                <i class="fas fa-angry"></i>
-                <i class="fas fa-frown"></i>
-                <i class="fas fa-meh"></i>
-                <i class="fas fa-smile"></i>
-                <i class="fas fa-grin-hearts"></i>
+            <div class="service">
+                <input type="range" class="satisfaction" min="0" max="100">
+                <div class="faces">
+                    <i class="fas fa-angry"></i>
+                    <i class="fas fa-frown"></i>
+                    <i class="fas fa-meh"></i>
+                    <i class="fas fa-smile"></i>
+                    <i class="fas fa-grin-hearts"></i>
+                </div>
             </div>
+            
             <p>How many people are sharing the bill?</p>
             <input type="number" class="people"  placeholder="Number of People" min="1" max="50">people
             <div class="button">
@@ -110,6 +114,33 @@
             font-size: 19px;
             font-weight: 100;
         }
+        
+
+        .service {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .satisfaction {
+            width: 80%;
+        }
+        .faces {
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 18px;
+        }
+
+        
+        .fa-angry{color: #df3f52;}
+        .fa-frown{color: #f4a528;}
+        .fa-meh{color: #d6c715;}
+        .fa-smile{color: #a0d033;}
+        .fa-grin-hearts{color: #7acd20;}
+       
         
     </style>
     <script src="tipCalculator.js"></script>
