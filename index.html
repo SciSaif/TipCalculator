@@ -29,11 +29,23 @@
             <p>How many people are sharing the bill?</p>
             <input type="number" class="people"  placeholder="Number of People" min="1" max="50">people
             <div class="button">
-                <button>CALCULATE!</button>
+                <button class="calculate">CALCULATE!</button>
+            </div>
+        </div>
+
+        <div class="result invisible">
+            <p id="bill">Your Bill: <span class="bill-display"></span> </p>
+            <p id="you-should">You Should Tip</p>
+            <p class="tip-display"></p>
+
+            <button class="go-back">Go Back</button>
+            <div class="thanks">
+                <p>Thanks for using Tip Calculator</p>
+                <p>Created by saif</p>
             </div>
         </div>
     </div>
-
+  
 
     <style>
         * {margin: 0;padding: 0;box-sizing: border-box;}
@@ -98,6 +110,14 @@
         }
 
 
+        input {
+            font-size: 18px;
+            color: #9f283d;
+        }
+        input::placeholder {
+            color: rgb(0, 0, 0);
+        }
+
         .button {
             display: flex;
             justify-content: center;
@@ -114,7 +134,14 @@
             font-size: 19px;
             font-weight: 100;
         }
-        
+        button:hover {
+            background: #9f283eaf;
+
+        }
+        button:active {
+            background: #9f283d;
+        }
+
 
         .service {
             display: flex;
@@ -142,6 +169,52 @@
         .fa-grin-hearts{color: #7acd20;}
        
         
+
+
+        /* result page */
+        .result {
+            width: 90%;
+            margin: 60px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .thanks {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .thanks p{
+            margin: 0;
+            padding: 5px;
+            color: #807e7e;
+            font-style: italic;
+        }
+
+        #bill,#you-should {
+            font-size: 25px;
+            color: #292929;
+        }
+        .bill-display {
+            color: #9f283d;
+        }
+        .tip-display {
+            font-size: 70px;
+            color: #518f0f;
+            margin-top: 0;
+            padding-top: 0;
+        }
+        
+
+
+
+        .invisible {
+            display: none;
+            pointer-events: none;
+        }
     </style>
     <script src="tipCalculator.js"></script>
 </body>
